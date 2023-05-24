@@ -1,7 +1,10 @@
 const signRouter = require('express').Router();
-const { createUser, login } = require('../controllers/users');
+const { celebrate } = require('celebrate');
 
-signRouter.post('/signup', createUser);
-signRouter.post('/signin', login);
+const { createUser, login } = require('../controllers/users');
+const { createUserValidation, loginValidation } = require('../validation/users');
+
+signRouter.post('/signup', celebrate(createUserValidation), createUser);
+signRouter.post('/signin', celebrate(loginValidation), login);
 
 module.exports = signRouter;

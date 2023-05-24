@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const urlValidate = /^(http|https):\/\/[^ "]+$/;
+const { urlValidate } = require('../validation/movie');
 
 const movieSchema = new mongoose.Schema({
   country: {
@@ -65,4 +65,4 @@ const movieSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('movie', movieSchema);
+module.exports = mongoose.model('movie', movieSchema), urlValidate;

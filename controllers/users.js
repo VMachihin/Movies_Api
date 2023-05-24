@@ -4,7 +4,7 @@ const User = require('../models/users');
 const { BadRequestErr, NotFoundErr, UnauthorizedErr } = require('../errors');
 
 require('dotenv').config();
-const { JWT_SECRET } = process.env;
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 const createUser = (req, res, next) => {
   const {
@@ -53,7 +53,7 @@ const login = (req, res, next) => {
           throw new UnauthorizedErr('Не правильная почта или пароль!');
         }
 
-        const token = jwt.sign({ _id: user._id }, JWT_SECRET, {
+        const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', {
           expiresIn: '10d',
         });
         res
