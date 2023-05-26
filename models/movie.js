@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { urlValidate } = require('../validation/movie');
+const urlValidate = /^(http|https):\/\/[^ "]+$/;
 
 const movieSchema = new mongoose.Schema({
   country: {
@@ -24,11 +24,11 @@ const movieSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
     validate: {
       validator(value) { return urlValidate.test(value); },
       message: 'Не верный формат ссылки!',
     },
+    required: true,
   },
   trailerLink: {
     type: String,
@@ -65,4 +65,4 @@ const movieSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('movie', movieSchema), urlValidate;
+module.exports = mongoose.model('movie', movieSchema)

@@ -6,7 +6,7 @@ const createMovie = (req, res, next) => {
   const { _id } = req.user;
   const { country, director, duration, year, description, image, trailerLink, thumbnail, movieId, nameRU, nameEN } = req.body;
 
-  Movie.create({ country, director, duration, year, description, image, trailerLink, movieId, thumbnail, owner: _id, nameRU, nameEN })
+  Movie.create({ country, director, duration, year, description, image, trailerLink, thumbnail, owner: _id, movieId, nameRU, nameEN })
     .then((newMovie) => {
       res.status(201).send(newMovie);
     })
