@@ -11,11 +11,9 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./middlewares/cors');
 
 const app = express();
-const { NODE_ENV, PORT = 3000 } = process.env;
+const { PORT = 3000 } = process.env;
 
-if (NODE_ENV !== 'production') {
-  mongoose.connect(dataBaseServer);
-}
+mongoose.connect(dataBaseServer);
 
 app.use(helmet());
 
