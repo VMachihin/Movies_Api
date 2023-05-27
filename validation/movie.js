@@ -1,4 +1,5 @@
 const { Joi } = require('celebrate');
+
 const urlValidate = /^(http|https):\/\/[^ "]+$/;
 
 const createMovieValidation = {
@@ -25,5 +26,5 @@ const movieIdValidation = {
 
 module.exports = {
   createMovieValidation,
-  movieIdValidation
+  movieIdValidation,
 };

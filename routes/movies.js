@@ -9,6 +9,3 @@ moviesRouter.post('/', celebrate(createMovieValidation), createMovie);
 moviesRouter.delete('/:id', celebrate(movieIdValidation), deleteMovie);
 
 module.exports = moviesRouter;
-
-
-
