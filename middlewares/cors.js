@@ -3,6 +3,8 @@ const allowedCors = [
   'http://api.movies.lib.nomoredomains.rocks',
   'https://movies.lib.nomoredomains.rocks',
   'http://movies.lib.nomoredomains.rocks',
+  'https://movies.lib.nomoredomains.rocks.vitmach.ru',
+  'http://movies.lib.nomoredomains.rocks.vitmach.ru',
   'localhost:3000',
   'http://localhost:3000',
   'localhost:8000',
