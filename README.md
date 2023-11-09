@@ -6,6 +6,6 @@
 
 ## Ссылка на проект
 
-IP-адрес 62.84.126.226
+IP-адрес 81.177.6.131
 
-https://api.movies.lib.nomoredomains.rocks
+https://api.movies.vitmach.ru
